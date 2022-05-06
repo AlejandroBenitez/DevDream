@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Welcome to DevDream!</h1>
-      <div className="bg-slate-300 h-screen text-white flex">
+      <div className="bg-slate-300 h-screen text-black flex">
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Home />} />
