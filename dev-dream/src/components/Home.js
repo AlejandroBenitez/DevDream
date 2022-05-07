@@ -1,10 +1,17 @@
 import { useAuth } from "../context/authContext";
 
 const Home = () => {
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
+
+  const handleLogout = async () => {
+    await logOut();
+  };
+
   return (
     <div>
-      <h1>Welcome: {user}</h1>Home
+      <h1>Welcome: {user.email}</h1>
+      <p>Home</p>
+      <button onClick={handleLogout}>LogOut</button>
     </div>
   );
 };
