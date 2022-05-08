@@ -29,10 +29,12 @@ const AuthProvider = ({ children }) => {
   const logOut = () => signOut(auth);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
+
+    return () => unsubscribe();
   }, []);
   return (
     <authContext.Provider value={{ signUp, login, logOut, user, loading }}>

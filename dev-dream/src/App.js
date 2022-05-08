@@ -4,11 +4,11 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import AuthProvider from "./context/authContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Welcome to DevDream!</h1>
       <div className="bg-slate-300 h-screen text-black flex">
         <AuthProvider>
           <Routes>

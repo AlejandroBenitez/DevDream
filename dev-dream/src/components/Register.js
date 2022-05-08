@@ -26,13 +26,13 @@ const Register = () => {
     } catch (error) {
       /* Manejo de errores desde firebase, se manejan solo 2, averiguar por más */
       if (error.code === "auth/invalid-email") {
-        setError("Correo inválido");
+        setError("Invalid email, write a valid email");
       } else if (error.code === "auth/weak-password") {
-        setError("Contraseña demasiado corta (6 dígitos mínimo)");
+        setError("Password too short (6 digits minimum)");
       } else if (error.code === "auth/internal-error") {
-        setError("Campo de contraseña vacío (6 dígitos mínimo)");
+        setError("Password input empty (6 digits minimum)");
       } else if (error.code === "auth/email-already-in-use") {
-        setError("Ese email está en uso, prueba con otro");
+        setError("Email in use, try another");
       } else {
         setError(
           `El error es desconocido, código: ${error.code} y mensaje: ${error.message}`
